@@ -226,37 +226,46 @@
 
 // export default DynamicButton;
 
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
+import axios from "axios";
 
 function App() {
-    const [newTask, setNewTask] = useState(''); // Initialize newTask state
 
-    const handleAdd = () => {
-        // Implement your logic for adding tasks here
-        // (You'll need to define this function)
-    };
+  
+  const[posts, SetPost]=useState()
+  const fetchPosts = async()=>{
+    try{
+      const response = await axios.get("");
+      SetPost(response.data)
+    }
+    catch(error){
+      console.log("error is there");
+    }
+  }
 
-    const tasks = []; // You'll need to populate this array with actual tasks
+
+  const createPost = async ()=>{
+    try{
+      const response= await axios.post("");
+      SetPost([...posts,response.data])
+      SetNewPost({title:'' , body:''})
+    }
+    catch(error){
+      
+      console.log("error is there");
+
+    }
+  }
+    
 
     return (
         <>
-        <p> Hello everyone </p>
-            <h1>Task List</h1>
-            <input
-                type="text"
-                value={newTask}
-                placeholder="Add Data"
-                onChange={(e) => setNewTask(e.target.value)}
-            />
-            <button onClick={handleAdd}>Add Task</button>
-            {/* You have two identical buttons; consider removing one */}
-            <ul>
-                {tasks.map((task) => (
-                    <li key={task}>{task}</li>
-                ))}
-            </ul>
+       
+            
         </>
     );
 }
+
 
 export default App;
