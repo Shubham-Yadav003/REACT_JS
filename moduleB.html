@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script type="module">
+        import{add,sub} from './moduleA.js';
+        const a=10;
+        const b=12;
+        const result=` Add:${a}+${b}=${add(a,b)} |  sub: ${a}-${b}=${sub(a,b)}`;
+        document.getElementById('result').textContent= result;
+
+    </script>
+</body>
+</html>
+
