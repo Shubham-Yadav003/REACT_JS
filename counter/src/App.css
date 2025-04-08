@@ -1,0 +1,46 @@
+.main{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: 500px;;
+  border: solid red;
+}
+.mini-main2{
+  border:solid green;
+  height:50%;
+  width:80%;
+  padding:10px;
+  margin:10px;
+  display:flex;
+  justify-content: center; 
+  align-items: center; 
+
+}
+.mini-main3{
+  border:solid green;
+  display:flex;
+  width:70%;
+}
+
+.mini-main4{
+  border:solid red;
+  width:50%;
+  display:flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.mini-main5{
+  border:solid yellow;
+  width:50%;
+  display:flex;
+  justify-content: center; 
+  align-items: center; 
+
+}
+.white-bg{
+  background-color: white;
+}
+ 
